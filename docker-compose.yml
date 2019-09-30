@@ -1,0 +1,14 @@
+version: "3"
+services:
+  web_flask:
+    build:
+      context: .
+      args:
+        project_directory: "/projects/"
+    ports:
+      - "5000:5000"
+    volumes:
+      - ".:/projects"
+    environment:
+      FLASK_ENV: "development"
+    command: "sleep infinity"
